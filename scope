@@ -1,0 +1,26 @@
+- registrar usuario
+- contabilizar a quantidade de cigarros consumidos diariamente
+- gravar a marca do cigarro sendo consumido assim como seu valor
+- levantar a quantidade de dinheiro gasta com os cigarros
+
+classes:
+
+usuario {
+    nome: string,
+    dataCriacao: date,
+    email: string,
+    password: string
+}
+
+cigarro: {
+    marca: string,
+    valorCarteira: decimal,
+    qtdDeCigarros: int
+}
+
+fumada: {
+    cigarro: cigarro,
+    qtde: int,
+    data: date
+}
+

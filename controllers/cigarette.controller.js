@@ -1,4 +1,4 @@
-const repository = require('../repository/cigarettes.repository');
+const repository = require('../repository/cigarette.repository');
 const { Cigarette, validate } = require('../models/cigarette.model');
 
 exports.getAll = async (req, res, next) => {

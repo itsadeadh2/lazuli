@@ -6,7 +6,7 @@ module.exports = function() {
         winston.format.colorize(),
         winston.format.json()
     );
-    winston.add(new winston.transports.File({ filename: 'logfile.log'}));
+    winston.add(new winston.transports.File({ filename: 'logs/logfile.log'}));
     winston.add(new winston.transports.Console({
         format: winston.format.combine(
             winston.format.colorize(),

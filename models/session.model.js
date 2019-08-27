@@ -1,5 +1,3 @@
-const config = require('config');
-const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const mongoose = require('mongoose');
 
@@ -51,7 +49,7 @@ const sessionSchema = new mongoose.Schema({
     }
 })
 
-const Session = mongoose.Model('Session', sessionSchema);
+const Session = mongoose.model('Session', sessionSchema);
 
 function validateSession(session) {
     const schema = {

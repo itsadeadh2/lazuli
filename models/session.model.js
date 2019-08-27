@@ -3,22 +3,8 @@ const mongoose = require('mongoose');
 
 const sessionSchema = new mongoose.Schema({
     user: {
-        type: new mongoose.Schema({ 
-            name: {
-                type: String,
-                required: true,
-                minlength: 5,
-                maxlength: 50
-            },
-            email: {
-                type: String,
-                required: true
-            },
-            dataCriacao: {
-                type: Date,
-                required: true
-            }
-        }),
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     cigarette: {
@@ -54,7 +40,8 @@ const Session = mongoose.model('Session', sessionSchema);
 function validateSession(session) {
     const schema = {
         userId: Joi.objectId().required(),
-        cigaretteId: Joi.objectId().required()
+        cigaretteId: Joi.objectId().required(),
+        numberOfCigarettes: Joi.number().required()
     };
 
     return Joi.validate(session, schema);

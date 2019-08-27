@@ -1,7 +1,7 @@
 const { Session } = require('../models/session.model');
 
 exports.getAll = async () => {
-    return await Session.find().sort('date');
+    return await Session.find().populate('user', '-password').sort('date');
 }
 
 exports.post = async (objSession) => {
@@ -10,5 +10,5 @@ exports.post = async (objSession) => {
 }
 
 exports.getById = async (id) => {
-    return await Session.findById(id);
+    return await Session.findById(id).populate('user', '-password');
 }

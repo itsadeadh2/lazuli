@@ -19,11 +19,7 @@ exports.post = async (req, res, next) => {
     if(!user) return res.status(400).send({ message: 'Invalid user.' });
     
     let session = await repository.post({
-        user: {
-            name: user.name,
-            email: user.email,
-            dataCriacao: user.dataCriacao
-        },
+        user: user._id,
         cigarette: {
             marca: cigarette.marca,
             valorCarteira: cigarette.valorCarteira,
